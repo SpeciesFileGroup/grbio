@@ -1,7 +1,7 @@
 # Grbio
 
 
-Grbio is an unofficial set of utilties that wrap the CSV data available at http://grbio.org. The provide simple methods to download the data, and some methods to examine it.  They also include a template generator to turn the data into Rails models.
+Grbio is an unofficial set of utilties that wrap the CSV data available at http://grbio.org. It provides simple methods to download the data, and some methods to examine it.  They also include a template generator to turn the data into Rails migrations.  A Rails engine dervied from this approach is forthcoming elsewhere.
 
 ## Installation
 
@@ -27,7 +27,7 @@ See also specs.
  require 'grbio'
  Grbio.download_resources   # => downloads to /tmp/*.csv
 
- Grbio::RailsMigration.all_migrations # => puts migration templates
+ Grbio::RailsMigration.institutions_migration # => a Rails migration, with column header nastiness fixed
 ```
 
 ## Development
