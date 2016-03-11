@@ -1,0 +1,12 @@
+class Create<%= file.to_s.split('_').collect{|a| a.capitalize}.join %> < ActiveRecord::Migration
+  def change
+    create_table <%= file %> do |t|
+    <% fields.each do |f| %>  t.string :<%= f %>
+    <% end %>
+      t.timestamps null: false 
+    end
+    
+    add_index <%= file %>, :url
+    add_index <%= file %>, :staff_member_full_name
+  end
+end

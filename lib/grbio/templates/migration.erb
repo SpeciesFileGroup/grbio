@@ -1,0 +1,7 @@
+class Create<%= file.to_s.split('_').collect{|a| a.capitalize}.join %> < ActiveRecord::Migration
+  def change
+  <% fields.each do |f| %>  t.string :<%= f %>
+  <% end %>
+    t.timestamps null: false 
+  end
+end
